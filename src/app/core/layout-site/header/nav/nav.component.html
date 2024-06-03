@@ -1,0 +1,58 @@
+<nav>
+  <ul class="bwr-header__nav">
+    <li>
+      <app-nav-link-content label="DE" [arrow]="true"></app-nav-link-content>
+    </li>
+    <li
+      [ngClass]="{ active: isDropdownOpen }"
+      *ngIf="!logIn"
+      style="min-width: 6.5rem"
+    >
+      <div
+        (click)="toggleDropdown($event)"
+        (keydown.enter)="toggleDropdown($event)"
+        (keydown.space)="toggleDropdown($event)"
+        [ngStyle]="{ cursor: 'pointer' }"
+        tabindex="0"
+        role="button"
+      >
+        <app-nav-link-content
+          label="LogIn"
+          [arrow]="true"
+          [isDropdownOpen]="isDropdownOpen"
+        >
+          <app-icon-user></app-icon-user>
+        </app-nav-link-content>
+      </div>
+      <app-nav-login [visible]="isDropdownOpen"></app-nav-login>
+    </li>
+    <li
+      [ngClass]="{ active: isDropdownOpen }"
+      routerLinkActive="active-link"
+      *ngIf="logIn"
+      style="min-width: 6.5rem"
+    >
+      <div
+        (click)="toggleDropdown($event)"
+        (keydown.enter)="toggleDropdown($event)"
+        (keydown.space)="toggleDropdown($event)"
+        tabindex="0"
+        role="button"
+      >
+        <app-nav-link-content
+          label="User"
+          [arrow]="true"
+          [isDropdownOpen]="isDropdownOpen"
+        >
+          <app-icon-user></app-icon-user>
+        </app-nav-link-content>
+      </div>
+      <app-nav-logout [visible]="isDropdownOpen"></app-nav-logout>
+    </li>
+    <li>
+      <app-nav-link-content label="Warenkorb">
+        <app-icon-basket></app-icon-basket>
+      </app-nav-link-content>
+    </li>
+  </ul>
+</nav>

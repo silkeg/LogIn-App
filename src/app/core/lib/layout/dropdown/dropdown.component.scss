@@ -1,0 +1,27 @@
+@import "colors.scss";
+@import "breakpoints.scss";
+
+.bwr-dropdown {
+  position: absolute;
+  margin-top: 18px;
+  left: 1rem;
+  right: 1rem;
+  text-align: center;
+  min-width: 20rem;
+  @include tablet {
+    text-align: right;
+  }
+  @include laptop {
+    right: 3rem;
+    left: 3rem;
+  }
+  > div {
+    min-width: 25%;
+    background-color: $white;
+    display: inline-block;
+    box-shadow: 0 6px 20px 3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    color: $text;
+    text-align: left;
+  }
+}

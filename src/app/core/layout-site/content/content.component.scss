@@ -1,0 +1,19 @@
+@import "colors.scss";
+
+.bwr-content {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-inline: 1rem;
+  color: $blue;
+  h1 {
+    margin-bottom: 3rem;
+  }
+  span {
+    text-transform: uppercase;
+    color: $lightblue;
+  }
+}

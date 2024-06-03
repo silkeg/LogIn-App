@@ -1,0 +1,36 @@
+<div
+  class="bwr-textfield"
+  [ngClass]="{
+    'bwr-textfield--active': !isEmpty,
+    'bwr-textfield--error': isError
+  }"
+  (click)="input.focus()"
+  (keydown.enter)="input.focus()"
+  [tabindex]="tabindex"
+  [id]="'error-' + id"
+>
+  <label class="bwr-label" [for]="id">
+    {{ label }} <span *ngIf="required">*</span>
+    <span
+      [id]="'error-message-' + id"
+      *ngIf="this.errorMessage.length > 0"
+      class="bwr-textfield--error-message"
+      ><app-icon-error width="1rem"></app-icon-error> {{ errorMessage }}</span
+    >
+  </label>
+  <input
+    [id]="id"
+    [name]="name"
+    [required]="required"
+    type="text"
+    #input
+    (blur)="checkInput(input.value)"
+    (focus)="isEmpty = false"
+    [value]="value"
+    (input)="onInput($event)"
+    [attr.minlength]="minlength"
+    [attr.maxlength]="maxlength"
+    [attr.aria-invalid]="isError"
+    [attr.aria-describedby]="isError ? errorMessageId : 'error-message-' + id"
+  />
+</div>

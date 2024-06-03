@@ -1,0 +1,18 @@
+@import "colors.scss";
+
+.bwr-nav__link--content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $white;
+  user-select: none;
+  .bwr-icon-arrow--rotate {
+    transition: all 250ms ease;
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+  .bwr-nav__link--label {
+    flex-grow: 1;
+  }
+}

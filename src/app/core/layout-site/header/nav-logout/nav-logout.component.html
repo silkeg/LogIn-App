@@ -1,0 +1,11 @@
+<app-dropdown *ngIf="visible">
+  <ul class="bwr-nav--user" role="navigation" *ngIf="router.url !== '/user'">
+    <li>
+      <a routerLink="/user">Mein Konto</a>
+    </li>
+  </ul>
+  <div>
+    <p class="bwr-dropdown__button--label">Mein Konto ausloggen:</p>
+    <app-button type="primary" label="LogOut" (click)="onLogOut()"></app-button>
+  </div>
+</app-dropdown>

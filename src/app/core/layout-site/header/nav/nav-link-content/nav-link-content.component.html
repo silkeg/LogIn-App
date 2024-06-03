@@ -1,0 +1,9 @@
+<span class="bwr-nav__link--content">
+  <ng-content></ng-content>
+  <span class="bwr-nav__link--label">{{ label }}</span>
+  <app-icon-arrow
+    *ngIf="arrow"
+    class="bwr-icon-arrow--rotate"
+    [ngClass]="{ 'bwr-icon-arrow--rotate--open': isDropdownOpen }"
+  ></app-icon-arrow>
+</span>

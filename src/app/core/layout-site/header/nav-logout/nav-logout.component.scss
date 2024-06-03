@@ -1,0 +1,19 @@
+@import "colors.scss";
+
+.bwr-nav--user {
+  margin-bottom: 2rem;
+  li {
+    padding: 1rem;
+    position: relative;
+    &::before {
+      content: "";
+      border: 0.5rem solid transparent;
+      border-left-color: $blue;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+.bwr-dropdown__button--label {
+  margin-bottom: 1rem;
+}

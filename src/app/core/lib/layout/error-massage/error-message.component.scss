@@ -1,0 +1,10 @@
+@import "colors.scss";
+
+.bwr-error-message {
+  color: $red;
+  display: flex;
+  gap: 1rem;
+  span {
+    display: block;
+  }
+}

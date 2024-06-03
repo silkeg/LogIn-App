@@ -1,0 +1,17 @@
+$breakpoints: (
+  // 768px
+  md: 48rem,
+  // 1024px
+  lg: 64rem
+) !default;
+
+@mixin tablet {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}

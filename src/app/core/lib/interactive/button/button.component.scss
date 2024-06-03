@@ -1,0 +1,21 @@
+@import "colors.scss";
+
+.bwr-button {
+  padding: 0.8rem 2rem;
+  border: 0.1rem solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  &--primary {
+    background-color: $blue;
+    color: $white;
+  }
+  &--secondary {
+    background-color: $white;
+    color: $blue;
+    border-color: $blue;
+  }
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

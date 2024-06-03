@@ -1,0 +1,42 @@
+@import "colors.scss";
+
+.bwr-textfield {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: all 250ms ease;
+  user-select: none;
+  &--active {
+    align-items: normal;
+    label {
+      font-size: 0.8rem;
+    }
+  }
+  input {
+    padding: 1.375rem 1rem 0.625rem 0.75rem;
+    color: $text;
+    border: 0.05rem solid $gray;
+    width: 100%;
+    &:focus-visible {
+      outline: none;
+      background-color: $lightgray;
+    }
+  }
+  &--error input {
+    border-color: $red;
+  }
+  .bwr-label {
+    position: absolute;
+    left: 0.75rem;
+    padding-block: 0.2rem;
+    color: $text;
+    transition: all 250ms ease;
+    display: flex;
+    gap: 0.5rem;
+  }
+  &--error-message {
+    color: $red;
+    display: flex;
+    gap: 0.5rem;
+  }
+}

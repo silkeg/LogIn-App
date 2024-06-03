@@ -1,0 +1,48 @@
+<app-dropdown *ngIf="visible">
+  <form #activateForm="ngForm" (ngSubmit)="onSubmit(activateForm)">
+    <div class="bwr-wrapper">
+      <app-error-message
+        *ngIf="errorMessage"
+        id="error-message-login"
+        errorMessage="
+          Bitte überprüfen Sie Ihre Daten.<br>
+          Entweder Ihr Nutzername oder Passwort ist falsch.
+        "
+      ></app-error-message>
+      <strong class="bwr-module-title bwr-login__title">
+        Bitte geben Sie Nutzername und Passwort ein.
+      </strong>
+      <fieldset>
+        <app-textfield
+          label="Nutzername"
+          id="username"
+          name="username"
+          [required]="true"
+          pattern="^[A-Za-z0-9]+$"
+          [isError]="errorMessage"
+          errorMessageId="error-message-login"
+          [minlength]="3"
+          [maxlength]="33"
+          ngModel
+        ></app-textfield>
+        <app-textfield
+          label="Passwort"
+          id="password"
+          name="password"
+          [required]="true"
+          [isError]="errorMessage"
+          errorMessageId="error-message-login"
+          [minlength]="6"
+          [maxlength]="33"
+          ngModel
+        ></app-textfield>
+        <a>Passwort vergessen</a>
+      </fieldset>
+      <app-button
+        label="Jetzt einloggen"
+        type="primary"
+        [disabled]="!activateForm.valid"
+      ></app-button>
+    </div>
+  </form>
+</app-dropdown>
