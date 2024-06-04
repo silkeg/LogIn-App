@@ -6,7 +6,7 @@ export interface loginData {
   password: string;
 }
 
-const validUserDate = { username: 'test', password: '123456' };
+const validUserData = { username: 'test', password: '123456' };
 
 @Injectable({ providedIn: 'root' })
 export class ActivateService {
@@ -27,8 +27,8 @@ export class ActivateService {
 
   login(value: loginData) {
     this.isLoggedIn =
-      validUserDate.username === value.username &&
-      validUserDate.password === value.password;
+      validUserData.username === value.username &&
+      validUserData.password === value.password;
     this.loggedSubject.next(this.isLoggedIn);
     return this.isLoggedIn;
   }
